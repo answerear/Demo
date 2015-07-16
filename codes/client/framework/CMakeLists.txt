@@ -10,7 +10,7 @@ SET_PROJECT_NAME(framework)
 
 IF (MSVC)
 	IF (BUILD_SHARED_LIBS)
-		ADD_DEFINITIONS(-D${LIB_NAME_TOUPPER}_EXPORT -D_USRDLL)
+		ADD_DEFINITIONS(-D${LIB_NAME_UPPER}_EXPORT -D_USRDLL)
 	ENDIF (BUILD_SHARED_LIBS)
 ENDIF (MSVC)
 
@@ -24,17 +24,15 @@ INCLUDE_DIRECTORIES(
 	"${SOURCE_DIR}/include/base_param"
 	)
 
-
 # Setup project source files
-ADD_PROJECT_FILES_BY_EXT(include ${SOURCE_DIR}/include/ .h)
-ADD_PROJECT_FILES_BY_EXT(include\\\\\\\\core ${SOURCE_DIR}/include/core/ .h)
-ADD_PROJECT_FILES_BY_EXT(include\\\\\\\\base_param ${SOURCE_IDR}/include/base_param/ .h)
+SET_PROJECT_FILES(include ${SOURCE_DIR}/include/ .h)
+SET_PROJECT_FILES(include\\\\core ${SOURCE_DIR}/include/core/ .h)
+SET_PROJECT_FILES(include\\\\base_param ${SOURCE_DIR}/include/base_param/ .h)
 
-ADD_PROJECT_FILES_BY_EXT(source ${SOURCE_DIR}/source/ .cpp)
-ADD_PROJECT_FILES_BY_EXT(source\\\\\\\\core ${SOURCE_DIR}/source/core/ .cpp)
-ADD_PROJECT_FILES_BY_EXT(source\\\\\\\\base_param ${SOURCE_DIR}/source/base_param/ .cpp)
+SET_PROJECT_FILES(source ${SOURCE_DIR}/source/ .cpp)
+SET_PROJECT_FILES(source\\\\core ${SOURCE_DIR}/source/core/ .cpp)
+SET_PROJECT_FILES(source\\\\base_param ${SOURCE_DIR}/source/base_param/ .cpp)
 
-SET(SOURCE_FILES ${${LIB_NAME}_FILES})
 
 IF (BUILD_SHARED_LIBS)
 	ADD_LIBRARY(${LIB_NAME} SHARED ${SOURCE_FILES})

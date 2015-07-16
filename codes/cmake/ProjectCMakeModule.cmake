@@ -16,50 +16,31 @@ MACRO(SET_PROJECT_NAME project_name)
 ENDMACRO(SET_PROJECT_NAME)
 
 
-# Add file to project
-# type : "FILE"
-# group : filter in Visual Studio project
-# dir : file directory
-# Usage : ADD_PROJECT_FILE("FILE" source ./source main.cpp)
-MACRO(ADD_PROJECT_FILE type group dir)
+FUNCTION(ADD_PROJECT_FILES file_list group dir)
 	FOREACH(var ${ARGN})
-		LIST(APPEND ${LIB_NAME}_${type} ${dir}${var})
+		LIST(APPEND temp_files ${dir}${var})
 		SOURCE_GROUP(${group} FILES ${dir}${var})
 	ENDFOREACH(var)
-ENDMACRO(ADD_PROJECT_FILE)
+	
+	SET(file_list "${temp_files}" PARENT_SCOPE)
+ENDFUNCTION(ADD_PROJECT_FILES)
 
 
-# Add file to project
-# type : "FILE"
-# group : filter in Visual Studio project
-# dir : file directory
-# ext : file extension
-# Usage : ADD_PROJECT_FILE_BY_EXT("FILE" source ./source .cpp)
-MACRO(ADD_PROJECT_FILE_BY_EXT type group dir ext)
+FUNCTION(ADD_PROJECT_FILES_BY_EXT out_files group dir ext)
 	FILE(GLOB var ${dir}*${ext})
 	
 	FOREACH(f ${var})
 		GET_FILENAME_COMPONENT(name ${f} NAME_WE)
-		ADD_PROJECT_FILE(${type} ${group} ${dir} "${name}${ext}")
-	ENDFOREACH(f)
-ENDMACRO(ADD_PROJECT_FILE_BY_EXT)
-
-
-MACRO(ADD_PROJECT_FILES group dir)
-	FOREACH(var ${ARGN})
-		LIST(APPEND ${LIB_NAME}_FILES ${dir}${var})
-		SOURCE_GROUP(${group} FILES ${dir}${var})
-	ENDFOREACH(var)
-ENDMACRO(ADD_PROJECT_FILES)
-
-
-MACRO(ADD_PROJECT_FILES_BY_EXT group dir ext)
-	MESSAGE(${group})
-	FILE(GLOB var ${dir}*${ext})
-	
-	FOREACH(f ${var})
-		GET_FILENAME_COMPONENT(name ${f} NAME_WE)
-		ADD_PROJECT_FILES(${group} ${dir} "${name}${ext}")
+		ADD_PROJECT_FILES(file_list ${group} ${dir} "${name}${ext}")
+		LIST(APPEND temp_list ${file_list})
 	ENDFOREACH()
-ENDMACRO(ADD_PROJECT_FILES_BY_EXT)
+
+	SET(out_files "${temp_list}" PARENT_SCOPE)
+ENDFUNCTION(ADD_PROJECT_FILES_BY_EXT)
+
+
+MACRO(SET_PROJECT_FILES group dir ext)
+	ADD_PROJECT_FILES_BY_EXT(out_files ${group} ${dir} ${ext})
+	LIST(APPEND SOURCE_FILES ${out_files})
+ENDMACRO(SET_PROJECT_FILES)
 	
