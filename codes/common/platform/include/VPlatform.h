@@ -6,7 +6,7 @@
 
 // #include "VType.h"
 
-#if defined VISION_PLATFORM_DLL
+#if defined PLATFORM_EXPORT
 #define VPLATFORM_API	VEXPORT_API
 #else
 #define VPLATFORM_API	VIMPORT_API
