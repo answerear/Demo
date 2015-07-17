@@ -2,11 +2,11 @@
 # Copyright Tiny Studio, 2015
 # Created by aa
 # 
-# This cmake file to generate framework project
+# This cmake file to generate log project
 ####################################################################################################
 
 # Set project name
-SET_PROJECT_NAME(framework)
+SET_PROJECT_NAME(log)
 
 IF (MSVC)
 	IF (BUILD_SHARED_LIBS)
@@ -15,16 +15,18 @@ IF (MSVC)
 ENDIF (MSVC)
 
 
-SET(SOURCE_DIR "../../common/framework")
-SET(PLATFORM_DIR "${SOURCE_DIR}/../platform")
+SET(SOURCE_DIR ".")
+SET(PLATFORM_DIR "${SOURCE_DIR}/../../common/platform")
+
 
 # Setup include directories
 INCLUDE_DIRECTORIES(
 	"${SOURCE_DIR}/include"
-	"${SOURCE_DIR}/include/core"
-	"${SOURCE_DIR}/include/base_param"
+	"${SOURCE_DIR}/include/service"
 	"${PLATFORM_DIR}/include"
 	"${PLATFORM_DIR}/include/thread"
+	"${PLATFORM_DIR}/include/io"
+	"${PLATFORM_DIR}/include/time"
 	)
 
 IF (WINDOWS)
@@ -46,12 +48,10 @@ ENDIF (WINDOWS)
 
 # Setup project source files
 SET_PROJECT_FILES(include ${SOURCE_DIR}/include/ .h)
-SET_PROJECT_FILES(include\\\\core ${SOURCE_DIR}/include/core/ .h)
-SET_PROJECT_FILES(include\\\\base_param ${SOURCE_DIR}/include/base_param/ .h)
+SET_PROJECT_FILES(include\\\\service ${SOURCE_DIR}/include/service/ .h)
 
 SET_PROJECT_FILES(source ${SOURCE_DIR}/source/ .cpp)
-SET_PROJECT_FILES(source\\\\core ${SOURCE_DIR}/source/core/ .cpp)
-SET_PROJECT_FILES(source\\\\base_param ${SOURCE_DIR}/source/base_param/ .cpp)
+SET_PROJECT_FILES(source\\\\service ${SOURCE_DIR}/source/service/ .cpp)
 
 
 IF (BUILD_SHARED_LIBS)
@@ -59,6 +59,7 @@ IF (BUILD_SHARED_LIBS)
 ELSE (BUILD_SHARED_LIBS)
 	ADD_LIBRARY(${LIB_NAME} STATIC ${SOURCE_FILES})
 ENDIF (BUILD_SHARED_LIBS)
+
 
 IF (WINDOWS)
 	TARGET_LINK_LIBRARIES(

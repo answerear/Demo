@@ -40,6 +40,8 @@ ENDIF (WINDOWS)
 
 
 ADD_SUBDIRECTORY(platform)
+ADD_SUBDIRECTORY(log)
 ADD_SUBDIRECTORY(framework)
 
+ADD_DEPENDENCIES(log platform)
 ADD_DEPENDENCIES(framework platform)
