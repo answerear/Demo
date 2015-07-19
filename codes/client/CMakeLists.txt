@@ -1,5 +1,18 @@
 # CMake entry point
-CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
+CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
+
+# It ensures that when Find*.cmake files included from cmake's Modules dir
+# include another *.cmake file with relative path, that file will be included
+# also from cmake's Modules dir, to not clash with per-project files.
+CMAKE_POLICY(SET CMP0017 NEW)
+
+# Use new behaviour with cmake >= 3.1:
+# Only interpret if() arguments as variables or keywords when unquoted.
+IF (CMAKE_VERSION VERSION_GREATER 3.1)
+    CMAKE_POLICY(SET CMP0054 NEW)
+ENDIF ()
+
+
 PROJECT(Demo)
 
 OPTION(DEBUG_MODE "Debug or release?" ON)
@@ -13,10 +26,10 @@ ENDIF (WIN32)
 # Setup platform dependencies macro
 IF (WIN32)
 	ADD_DEFINITIONS(-DV_OS_WIN32)
-	SET(WINDOWS ON CACHE STRING "Windows")
+#	SET(WINDOWS ON CACHE STRING "Windows")
 ELSEIF (APPLE)
 	ADD_DEFINITIONS(-DV_OS_MACOS)
-	SET(MACOSX ON CACHE STRING "Mac OSX")
+#	SET(MACOSX ON CACHE STRING "Mac OSX")
 ENDIF (WIN32)
 
 # Setup debug or release mode
@@ -27,10 +40,12 @@ ELSE (DEBUG_MODE)
 ENDIF (DEBUG_MODE)
 
 # Add cmake module path
-LIST(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/../cmake)
+LIST(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/../cmake" "${PROJECT_SOURCE_DIR}/../cmake/Modules/")
 
+INCLUDE(CocosBuildHelpers)
 INCLUDE(CPack)
 INCLUDE(ProjectCMakeModule)
+
 
 # Setup dependencies directory
 IF (WINDOWS)
@@ -42,6 +57,7 @@ ENDIF (WINDOWS)
 ADD_SUBDIRECTORY(platform)
 ADD_SUBDIRECTORY(log)
 ADD_SUBDIRECTORY(framework)
+ADD_SUBDIRECTORY(game)
 
 ADD_DEPENDENCIES(log platform)
 ADD_DEPENDENCIES(framework platform)
