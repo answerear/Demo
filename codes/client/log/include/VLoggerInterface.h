@@ -7,7 +7,7 @@
 #include "VMacro.h"
 
 
-#ifdef VISION_LOG_DLL
+#ifdef LOG_EXPORT
 #define VLOG_API				VEXPORT_API
 #else
 #define VLOG_API				VIMPORT_API

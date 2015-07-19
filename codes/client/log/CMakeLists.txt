@@ -24,8 +24,9 @@ INCLUDE_DIRECTORIES(
 	"${SOURCE_DIR}/include"
 	"${SOURCE_DIR}/include/service"
 	"${PLATFORM_DIR}/include"
-	"${PLATFORM_DIR}/include/thread"
+	"${PLATFORM_DIR}/include/console"
 	"${PLATFORM_DIR}/include/io"
+	"${PLATFORM_DIR}/include/thread"
 	"${PLATFORM_DIR}/include/time"
 	)
 
