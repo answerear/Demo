@@ -232,3 +232,4 @@ set(XXHASH_LIBRARIES xxhash)
 
 # libcocos2d.a
 ADD_SUBDIRECTORY(cocos)
+ADD_SUBDIRECTORY(game)

@@ -60,4 +60,5 @@ ADD_SUBDIRECTORY(framework)
 ADD_SUBDIRECTORY(game)
 
 ADD_DEPENDENCIES(log platform)
-ADD_DEPENDENCIES(framework platform)
+ADD_DEPENDENCIES(framework log platform)
+ADD_DEPENDENCIES(game cocos2d framework log platform)
