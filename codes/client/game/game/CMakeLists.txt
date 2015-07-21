@@ -81,16 +81,16 @@ IF (MSVC)
 	#get our resources
 	ADD_CUSTOM_COMMAND(TARGET ${BIN_NAME} PRE_BUILD
 						COMMAND ${CMAKE_COMMAND} -E copy_directory
-							${RESOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR})
+							${RESOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR}/resources)
 	#get our dlls
 	ADD_CUSTOM_COMMAND(TARGET ${BIN_NAME} PRE_BUILD
 						COMMAND ${CMAKE_COMMAND} -E copy
-						${CMAKE_CURRENT_SOURCE_DIR}/../../external/win32-specific/gles/prebuilt/glew32.dll 
+						${CMAKE_CURRENT_SOURCE_DIR}/../external/win32-specific/gles/prebuilt/glew32.dll 
 						${CMAKE_CURRENT_BINARY_DIR})
 
 	ADD_CUSTOM_COMMAND(TARGET ${BIN_NAME} PRE_BUILD
 						COMMAND ${CMAKE_COMMAND} -E copy
-						${CMAKE_CURRENT_SOURCE_DIR}/../../external/win32-specific/zlib/prebuilt/zlib1.dll 
+						${CMAKE_CURRENT_SOURCE_DIR}/../external/win32-specific/zlib/prebuilt/zlib1.dll 
 						${CMAKE_CURRENT_BINARY_DIR}/Debug)
 
 	SET_TARGET_PROPERTIES(${BIN_NAME} PROPERTIES LINK_FLAGS_DEBUG "/SUBSYSTEM:WINDOWS")
