@@ -78,20 +78,21 @@ SET(RESOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../../../../resources")
 
 # Copy resources to binary directory
 IF (MSVC)
-	#get our resources
-	ADD_CUSTOM_COMMAND(TARGET ${BIN_NAME} PRE_BUILD
-						COMMAND ${CMAKE_COMMAND} -E copy_directory
-							${RESOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR}/resources)
 	#get our dlls
 	ADD_CUSTOM_COMMAND(TARGET ${BIN_NAME} PRE_BUILD
 						COMMAND ${CMAKE_COMMAND} -E copy
-						${CMAKE_CURRENT_SOURCE_DIR}/../external/win32-specific/gles/prebuilt/glew32.dll 
-						${CMAKE_CURRENT_BINARY_DIR})
+						"${CMAKE_CURRENT_SOURCE_DIR}/../external/win32-specific/gles/prebuilt/glew32.dll" 
+						"${BIN_DIR}")
 
 	ADD_CUSTOM_COMMAND(TARGET ${BIN_NAME} PRE_BUILD
 						COMMAND ${CMAKE_COMMAND} -E copy
-						${CMAKE_CURRENT_SOURCE_DIR}/../external/win32-specific/zlib/prebuilt/zlib1.dll 
-						${CMAKE_CURRENT_BINARY_DIR}/Debug)
+						"${CMAKE_CURRENT_SOURCE_DIR}/../external/win32-specific/zlib/prebuilt/zlib1.dll" 
+						"${BIN_DIR}")
+	
+	ADD_CUSTOM_COMMAND(TARGET ${BIN_NAME} POST_BUILD
+						COMMAND ${CMAKE_COMMAND} -E copy
+						"${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_BUILD_TYPE}/${BIN_NAME}.exe"
+						"${BIN_DIR}")
 
 	SET_TARGET_PROPERTIES(${BIN_NAME} PROPERTIES LINK_FLAGS_DEBUG "/SUBSYSTEM:WINDOWS")
 	SET_TARGET_PROPERTIES(${BIN_NAME} PROPERTIES LINK_FLAGS_RELEASE "/SUBSYSTEM:WINDOWS")

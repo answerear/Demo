@@ -47,6 +47,24 @@ INCLUDE(CPack)
 INCLUDE(ProjectCMakeModule)
 
 
+MESSAGE("${CMAKE_CURRENT_SOURCE_DIR}")
+
+SET(BIN_DIR "${PROJECT_BINARY_DIR}/bin" CACHE STRING "Output binary directory")
+SET(RESOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../../resources" CACHE STRING "Resource directory")
+
+
+
+ADD_CUSTOM_TARGET(setup_build)
+
+ADD_CUSTOM_TARGET(TARGET setup_build PRE_BUILD
+	COMMAND ${CMAKE_COMMAND} -E 
+	make_directory "${BIN_DIR}")
+
+ADD_CUSTOM_COMMAND(TARGET setup_build PRE_BUILD
+	COMMAND ${CMAKE_COMMAND} -E 
+	copy_directory "${RESOURCE_DIR}" "${BIN_DIR}/resources/")
+
+
 # Setup dependencies directory
 IF (WINDOWS)
 	SET(DEPENDENCIES_DIR "${PROJECT_SOURCE_DIR}/../dependencies/win32")
@@ -59,6 +77,6 @@ ADD_SUBDIRECTORY(log)
 ADD_SUBDIRECTORY(framework)
 ADD_SUBDIRECTORY(game)
 
-ADD_DEPENDENCIES(log platform)
-ADD_DEPENDENCIES(framework log platform)
-ADD_DEPENDENCIES(game cocos2d framework log platform)
+ADD_DEPENDENCIES(log platform setup_build)
+ADD_DEPENDENCIES(framework log platform setup_build)
+ADD_DEPENDENCIES(game cocos2d framework log platform setup_build)
