@@ -56,13 +56,15 @@ SET(RESOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../../resources" CACHE STRING "Res
 
 ADD_CUSTOM_TARGET(setup_build)
 
-ADD_CUSTOM_TARGET(TARGET setup_build PRE_BUILD
+ADD_CUSTOM_COMMAND(TARGET setup_build PRE_BUILD
 	COMMAND ${CMAKE_COMMAND} -E 
-	make_directory "${BIN_DIR}")
+	make_directory "${BIN_DIR}"
+	COMMENT "Create directory ${BIN_DIR}/")
 
 ADD_CUSTOM_COMMAND(TARGET setup_build PRE_BUILD
 	COMMAND ${CMAKE_COMMAND} -E 
-	copy_directory "${RESOURCE_DIR}" "${BIN_DIR}/resources/")
+	copy_directory "${RESOURCE_DIR}" "${BIN_DIR}/resources/"
+	COMMENT "Copy resource from ${RESOURCE_DIR} to ${BIN_DIR}/resources/")
 
 
 # Setup dependencies directory
@@ -77,6 +79,7 @@ ADD_SUBDIRECTORY(log)
 ADD_SUBDIRECTORY(framework)
 ADD_SUBDIRECTORY(game)
 
+ADD_DEPENDENCIES(platform setup_build)
 ADD_DEPENDENCIES(log platform setup_build)
 ADD_DEPENDENCIES(framework log platform setup_build)
 ADD_DEPENDENCIES(game cocos2d framework log platform setup_build)

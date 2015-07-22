@@ -89,6 +89,41 @@ IF (MSVC)
 						"${CMAKE_CURRENT_SOURCE_DIR}/../external/win32-specific/zlib/prebuilt/zlib1.dll" 
 						"${BIN_DIR}")
 	
+	ADD_CUSTOM_COMMAND(TARGET ${BIN_NAME} PRE_BUILD
+						COMMAND ${CMAKE_COMMAND} -E copy
+						"${CMAKE_CURRENT_SOURCE_DIR}/../external/win32-specific/OggDecoder/prebuilt/libogg.dll"
+						"${BIN_DIR}")
+	
+	ADD_CUSTOM_COMMAND(TARGET ${BIN_NAME} PRE_BUILD
+						COMMAND ${CMAKE_COMMAND} -E copy
+						"${CMAKE_CURRENT_SOURCE_DIR}/../external/win32-specific/OggDecoder/prebuilt/libvorbis.dll"
+						"${BIN_DIR}")
+	
+	ADD_CUSTOM_COMMAND(TARGET ${BIN_NAME} PRE_BUILD
+						COMMAND ${CMAKE_COMMAND} -E copy
+						"${CMAKE_CURRENT_SOURCE_DIR}/../external/win32-specific/OggDecoder/prebuilt/libvorbisfile.dll"
+						"${BIN_DIR}")
+	
+	ADD_CUSTOM_COMMAND(TARGET ${BIN_NAME} PRE_BUILD
+						COMMAND ${CMAKE_COMMAND} -E copy
+						"${CMAKE_CURRENT_SOURCE_DIR}/../external/win32-specific/MP3Decoder/prebuilt/libmpg123.dll"
+						"${BIN_DIR}")
+	
+	ADD_CUSTOM_COMMAND(TARGET ${BIN_NAME} PRE_BUILD
+						COMMAND ${CMAKE_COMMAND} -E copy
+						"${CMAKE_CURRENT_SOURCE_DIR}/../external/win32-specific/OpenalSoft/prebuilt/OpenAL32.dll"
+						"${BIN_DIR}")
+	
+	ADD_CUSTOM_COMMAND(TARGET ${BIN_NAME} PRE_BUILD
+						COMMAND ${CMAKE_COMMAND} -E copy
+						"${CMAKE_CURRENT_SOURCE_DIR}/../external/websockets/prebuilt/win32/websockets.dll"
+						"${BIN_DIR}")
+	
+	ADD_CUSTOM_COMMAND(TARGET ${BIN_NAME} PRE_BUILD
+						COMMAND ${CMAKE_COMMAND} -E copy
+						"${CMAKE_CURRENT_SOURCE_DIR}/../external/curl/prebuilt/win32/libcurl.dll"
+						"${BIN_DIR}")
+	
 	ADD_CUSTOM_COMMAND(TARGET ${BIN_NAME} POST_BUILD
 						COMMAND ${CMAKE_COMMAND} -E copy
 						"${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_BUILD_TYPE}/${BIN_NAME}.exe"
