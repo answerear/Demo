@@ -11,3 +11,4 @@ else
   APP_CPPFLAGS += -DNDEBUG
   APP_OPTIM := release
 endif
+APP_ABI := armeabi armeabi-v7a
