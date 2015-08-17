@@ -70,7 +70,35 @@
     <SharedLibraryBreakpointWorkaroundMode>AutoDetect</SharedLibraryBreakpointWorkaroundMode>
   </Debug>
   <CustomBuild>
-    <PreBuildActions />
+    <PreBuildActions>
+      <CustomActionBase xsi:type="CommandLineAction">
+        <SkipWhenRunningCommandList>false</SkipWhenRunningCommandList>
+        <Command>cmd</Command>
+        <Arguments>/C "rmdir /S /Q assets"</Arguments>
+        <WorkingDirectory>$(BuildDir)</WorkingDirectory>
+        <Environment>
+          <Records />
+        </Environment>
+      </CustomActionBase>
+      <CustomActionBase xsi:type="CommandLineAction">
+        <SkipWhenRunningCommandList>false</SkipWhenRunningCommandList>
+        <Command>cmd</Command>
+        <Arguments>/C "mkdir assets"</Arguments>
+        <WorkingDirectory>$(BuildDir)</WorkingDirectory>
+        <Environment>
+          <Records />
+        </Environment>
+      </CustomActionBase>
+      <CustomActionBase xsi:type="CommandLineAction">
+        <SkipWhenRunningCommandList>false</SkipWhenRunningCommandList>
+        <Command>xcopy</Command>
+        <Arguments>/Y /E $(BuildDir)\..\Resources\*.* $(BuildDir)\assets</Arguments>
+        <WorkingDirectory>$(BuildDir)</WorkingDirectory>
+        <Environment>
+          <Records />
+        </Environment>
+      </CustomActionBase>
+    </PreBuildActions>
     <PostBuildActions />
     <PreCleanActions />
     <PostCleanActions />
