@@ -3,3 +3,6 @@ libs
 obj
 bin
 gen
+CodeDB
+Debug
+local.properties
