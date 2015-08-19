@@ -68,9 +68,6 @@
     <None Include="..\..\jni\Application.mk" />
     <None Include="..\..\src\org\cocos2dx\cpp\AppActivity.java" />
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\jni\hellocpp\main.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -1,23 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source files">
-      <UniqueIdentifier>{a0a02b94-6ebd-49ab-b726-53e2a9598c6c}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header files">
-      <UniqueIdentifier>{9468447a-78aa-4787-93ff-c36ba90b6829}</UniqueIdentifier>
-      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
     <Filter Include="Resource files">
       <UniqueIdentifier>{98490ccf-9e0a-425e-aae3-0b794e4f3ad5}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
-    </Filter>
-    <Filter Include="Source files\hellocpp">
-      <UniqueIdentifier>{4c644812-e4cc-4ce2-a075-b3f6a447d8fa}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header files\hellocpp">
-      <UniqueIdentifier>{0561aea2-ed0e-463f-aae9-e54bdfa0f5fa}</UniqueIdentifier>
     </Filter>
     <Filter Include="Java Source Files">
       <UniqueIdentifier>{011d91a4-16df-450a-a11b-9f201cf712d1}</UniqueIdentifier>
@@ -32,6 +18,18 @@
     <Filter Include="Java Source Files\org\cocos2dx\cpp">
       <UniqueIdentifier>{1f4cf956-108f-4a00-b426-ec5105832b8c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="main">
+      <UniqueIdentifier>{31a6a8fb-238b-4068-9a21-0a8966c15912}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="app">
+      <UniqueIdentifier>{d924aeb5-c870-4d20-a0c3-4d217dd60b5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scene">
+      <UniqueIdentifier>{3ff5f88e-1459-4424-ac06-2fdd081b172e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scenemgr">
+      <UniqueIdentifier>{0ec3afd2-1282-4727-8dd4-745d497e6ef1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Xml Include="..\..\AndroidManifest.xml" />
@@ -42,10 +40,5 @@
     <None Include="..\..\src\org\cocos2dx\cpp\AppActivity.java">
       <Filter>Java Source Files\org\cocos2dx\cpp</Filter>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\jni\hellocpp\main.cpp">
-      <Filter>Source files\hellocpp</Filter>
-    </ClCompile>
   </ItemGroup>
 </Project>

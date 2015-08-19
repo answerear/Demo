@@ -7,30 +7,378 @@
     <Filter Include="resource">
       <UniqueIdentifier>{715254bc-d70b-4ec5-bf29-467dd3ace079}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src">
+    <Filter Include="scene">
       <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="app">
+      <UniqueIdentifier>{f15d364c-0720-4d36-be37-87edf83ae321}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scene\menu">
+      <UniqueIdentifier>{aba92e02-3e46-4744-9523-9a3f6d0993d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scene\loading">
+      <UniqueIdentifier>{d5192429-e268-44bd-9393-923f981526d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scene\game">
+      <UniqueIdentifier>{0b554ea1-760d-4572-b7d8-4cb8e40c7ca5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scenemgr">
+      <UniqueIdentifier>{289fd634-22a2-4c4c-b323-5c904a07910f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework">
+      <UniqueIdentifier>{218fd6bb-c853-4608-afbb-61c47776ccf3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform">
+      <UniqueIdentifier>{591f6d70-9a65-497e-8eac-e7ee23cce86e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\include">
+      <UniqueIdentifier>{8b99d5c4-738a-4a21-a2ba-41318458d0d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\source">
+      <UniqueIdentifier>{68c2e4f9-463a-47fb-ae44-df02beedc00a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\include\core">
+      <UniqueIdentifier>{59ffb5d4-d5a6-45e8-af08-67f2be54a278}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\include\base_param">
+      <UniqueIdentifier>{9550b7f8-66b1-46dc-8a78-a8cafeeab65e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\source\base_param">
+      <UniqueIdentifier>{d6cdef20-589a-4f04-95a9-d9ee84e0476e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\source\core">
+      <UniqueIdentifier>{8bbf60f6-338d-4bf0-8af8-8ac031275ffb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\include">
+      <UniqueIdentifier>{978c7d5c-557b-4afd-9ba9-f0cdbc51b1b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\source">
+      <UniqueIdentifier>{82d85fd3-88cf-4f6f-8d4e-387f425f78d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\include\adapter">
+      <UniqueIdentifier>{234d9262-c4c4-4a51-a63c-f38ce76923ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\include\apn">
+      <UniqueIdentifier>{4827eb56-bd8b-4b1c-87d5-bf88879a309c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\include\codec">
+      <UniqueIdentifier>{b08d3e49-7c8b-486e-87b6-ef29b3b68a10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\include\console">
+      <UniqueIdentifier>{0da24850-43cc-4fac-a40a-8d971c8893a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\include\device">
+      <UniqueIdentifier>{784ecdc1-9ba3-427e-90ef-ae30dafe29af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\include\io">
+      <UniqueIdentifier>{b452d317-6a18-4bec-a295-e00c6c71f4f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\include\memory">
+      <UniqueIdentifier>{47e9956d-b15e-45b9-aecf-a703d6b3bf2b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\include\network">
+      <UniqueIdentifier>{15beb3a3-8407-4aa8-b6ea-8a0767c3128f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\include\time">
+      <UniqueIdentifier>{e67dc096-44a1-4482-8c2e-173504b4c59c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\include\adapter\win32">
+      <UniqueIdentifier>{99a980d3-cc5f-4883-b027-e48e657f6492}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\source\adapter">
+      <UniqueIdentifier>{4df238a7-b7a3-4e5a-b104-822a5c152d33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\source\adapter\win32">
+      <UniqueIdentifier>{614e9051-c15d-4df3-bc99-89cee6bf1bf1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\source\apn">
+      <UniqueIdentifier>{3ae7e12a-a580-4f9c-b6a8-d89fc0c8a431}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\source\codec">
+      <UniqueIdentifier>{dbee34ab-c869-49c4-84af-4c4da0ccec35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\source\console">
+      <UniqueIdentifier>{de5dcd03-cc35-44a3-8da6-e2d4656d4116}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\source\device">
+      <UniqueIdentifier>{b31d5cbe-9e07-4f53-9ade-3afb44bd4b4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\source\io">
+      <UniqueIdentifier>{aa792463-a4b6-48c3-95f6-23e644c570a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\source\memory">
+      <UniqueIdentifier>{63396bc7-fa70-46ba-a3b2-76173b18e54b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\source\network">
+      <UniqueIdentifier>{e09cf831-75e6-4101-a3b1-3e07200f8814}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\source\time">
+      <UniqueIdentifier>{6e2635f3-98ca-4bd0-9fe0-a493253ed1a9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>win32</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\AppDelegate.cpp">
-      <Filter>src</Filter>
+    <ClCompile Include="..\Classes\scenemgr\TGScene.cpp">
+      <Filter>scenemgr</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\HelloWorldScene.cpp">
-      <Filter>src</Filter>
+    <ClCompile Include="..\Classes\scenemgr\TGSceneManager.cpp">
+      <Filter>scenemgr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\framework\source\core\VEventHandler.cpp">
+      <Filter>framework\source\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\framework\source\core\VEventManager.cpp">
+      <Filter>framework\source\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\framework\source\core\VInstance.cpp">
+      <Filter>framework\source\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\framework\source\base_param\VEventParamBuffer.cpp">
+      <Filter>framework\source\base_param</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platform\source\adapter\Win32\VAdapterFactory.cpp">
+      <Filter>platform\source\adapter\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platform\source\adapter\Win32\VApnAdapter.cpp">
+      <Filter>platform\source\adapter\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platform\source\adapter\Win32\VConsoleAdapter.cpp">
+      <Filter>platform\source\adapter\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platform\source\adapter\Win32\VDeviceInfoAdapter.cpp">
+      <Filter>platform\source\adapter\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platform\source\adapter\Win32\VDirAdapter.cpp">
+      <Filter>platform\source\adapter\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platform\source\adapter\Win32\VTimerAdapter.cpp">
+      <Filter>platform\source\adapter\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platform\source\adapter\Win32\VTimerContainer.cpp">
+      <Filter>platform\source\adapter\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platform\source\apn\VApnManager.cpp">
+      <Filter>platform\source\apn</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platform\source\codec\VTextCodec.cpp">
+      <Filter>platform\source\codec</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platform\source\console\VConsole.cpp">
+      <Filter>platform\source\console</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platform\source\device\VDeviceInfo.cpp">
+      <Filter>platform\source\device</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platform\source\io\VDataStream.cpp">
+      <Filter>platform\source\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platform\source\io\VDir.cpp">
+      <Filter>platform\source\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platform\source\io\VFileDataStream.cpp">
+      <Filter>platform\source\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platform\source\io\VMemoryDataStream.cpp">
+      <Filter>platform\source\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platform\source\memory\VObjectPool.cpp">
+      <Filter>platform\source\memory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platform\source\memory\VPoolObject.cpp">
+      <Filter>platform\source\memory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platform\source\network\VBufQueue.cpp">
+      <Filter>platform\source\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platform\source\network\VSocket.cpp">
+      <Filter>platform\source\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platform\source\time\VDateTime.cpp">
+      <Filter>platform\source\time</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platform\source\time\VRunLoop.cpp">
+      <Filter>platform\source\time</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platform\source\time\VTimer.cpp">
+      <Filter>platform\source\time</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platform\source\time\VTimerManager.cpp">
+      <Filter>platform\source\time</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platform\source\VSystem.cpp">
+      <Filter>platform\source</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
       <Filter>win32</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\AppDelegate.h">
-      <Filter>src</Filter>
+    <ClInclude Include="..\Classes\scenemgr\TGScene.h">
+      <Filter>scenemgr</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\HelloWorldScene.h">
-      <Filter>src</Filter>
+    <ClInclude Include="..\Classes\scenemgr\TGSceneManager.h">
+      <Filter>scenemgr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\framework\include\base_param\VEventParamBuffer.h">
+      <Filter>framework\include\base_param</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\framework\include\base_param\VEventParamT1.h">
+      <Filter>framework\include\base_param</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\framework\include\base_param\VEventParamT2.h">
+      <Filter>framework\include\base_param</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\framework\include\base_param\VEventParamT3.h">
+      <Filter>framework\include\base_param</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\framework\include\base_param\VEventParamT4.h">
+      <Filter>framework\include\base_param</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\framework\include\base_param\VEventParamT5.h">
+      <Filter>framework\include\base_param</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\framework\include\core\VEventDefine.h">
+      <Filter>framework\include\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\framework\include\core\VEventHandler.h">
+      <Filter>framework\include\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\framework\include\core\VEventMacro.h">
+      <Filter>framework\include\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\framework\include\core\VEventManager.h">
+      <Filter>framework\include\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\framework\include\core\VEventParam.h">
+      <Filter>framework\include\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\framework\include\core\VFramework.h">
+      <Filter>framework\include\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\framework\include\core\VInstance.h">
+      <Filter>framework\include\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platform\include\adapter\IAdapterFactory.h">
+      <Filter>platform\include\adapter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platform\include\adapter\IApnAdapter.h">
+      <Filter>platform\include\adapter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platform\include\adapter\IApnAdapterObserver.h">
+      <Filter>platform\include\adapter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platform\include\adapter\IConsoleAdapter.h">
+      <Filter>platform\include\adapter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platform\include\adapter\IDeviceInfoAdapter.h">
+      <Filter>platform\include\adapter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platform\include\adapter\IDirAdapter.h">
+      <Filter>platform\include\adapter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platform\include\adapter\ITimerAdapter.h">
+      <Filter>platform\include\adapter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platform\include\adapter\win32\VAdapterFactory.h">
+      <Filter>platform\include\adapter\win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platform\include\adapter\win32\VApnAdapter.h">
+      <Filter>platform\include\adapter\win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platform\include\adapter\win32\VConsoleAdapter.h">
+      <Filter>platform\include\adapter\win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platform\include\adapter\win32\VDeviceInfoAdapter.h">
+      <Filter>platform\include\adapter\win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platform\include\adapter\win32\VDirAdapter.h">
+      <Filter>platform\include\adapter\win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platform\include\adapter\win32\VTimerAdapter.h">
+      <Filter>platform\include\adapter\win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platform\include\adapter\win32\VTimerContainer.h">
+      <Filter>platform\include\adapter\win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platform\include\apn\IApnObserver.h">
+      <Filter>platform\include\apn</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platform\include\apn\VApnManager.h">
+      <Filter>platform\include\apn</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platform\include\apn\VApnType.h">
+      <Filter>platform\include\apn</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platform\include\codec\VTextCodec.h">
+      <Filter>platform\include\codec</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platform\include\console\VConsole.h">
+      <Filter>platform\include\console</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platform\include\device\VDeviceInfo.h">
+      <Filter>platform\include\device</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platform\include\io\VDataStream.h">
+      <Filter>platform\include\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platform\include\io\VDir.h">
+      <Filter>platform\include\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platform\include\io\VFileDataStream.h">
+      <Filter>platform\include\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platform\include\io\VMemoryDataStream.h">
+      <Filter>platform\include\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platform\include\memory\VObjectAllocator.h">
+      <Filter>platform\include\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platform\include\memory\VObjectPool.h">
+      <Filter>platform\include\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platform\include\memory\VPoolObject.h">
+      <Filter>platform\include\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platform\include\network\VBufQueue.h">
+      <Filter>platform\include\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platform\include\network\VSocket.h">
+      <Filter>platform\include\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platform\include\network\VSocketType.h">
+      <Filter>platform\include\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platform\include\time\IRunLoopObserver.h">
+      <Filter>platform\include\time</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platform\include\time\ITimerObserver.h">
+      <Filter>platform\include\time</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platform\include\time\VDateTime.h">
+      <Filter>platform\include\time</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platform\include\time\VRunLoop.h">
+      <Filter>platform\include\time</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platform\include\time\VTimer.h">
+      <Filter>platform\include\time</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platform\include\VMacro.h">
+      <Filter>platform\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platform\include\VPlatform.h">
+      <Filter>platform\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platform\include\VSingleton.h">
+      <Filter>platform\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platform\include\VSystem.h">
+      <Filter>platform\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platform\include\VType.h">
+      <Filter>platform\include</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
