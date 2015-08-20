@@ -7,7 +7,7 @@
 #include "VType.h"
 #include "VMacro.h"
 #include "VPlatform.h"
-
+#include <mutex>
 
 namespace VPlatform
 {
@@ -119,7 +119,9 @@ namespace VPlatform
 
 		VObjectAllocator	*m_pObjectAllocator;	/// 对象分配器
 
-		VMutex		*m_pMutex;
+		std::recursive_mutex	m_mutex;
+		bool		m_bHasLocker;
+// 		VMutex		*m_pMutex;
 	};
 }
 

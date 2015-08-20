@@ -35,12 +35,12 @@ namespace VFramework
 		return V_EVENT_MANAGER.postEvent(unEventID, pEventParam, receiver, m_InstanceID, nType);
 	}
 
-	bool VEventHandler::sendEventEx(uint32_t unEventID, VEventParam *pEventParam)
+	bool VEventHandler::sendEvent(uint32_t unEventID, VEventParam *pEventParam)
 	{
 		return V_EVENT_MANAGER.sendEvent(unEventID, pEventParam, m_InstanceID);
 	}
 
-	bool VEventHandler::postEventEx(uint32_t unEventID, VEventParam *pEventParam)
+	bool VEventHandler::postEvent(uint32_t unEventID, VEventParam *pEventParam)
 	{
 		return V_EVENT_MANAGER.postEvent(unEventID, pEventParam, m_InstanceID);
 	}

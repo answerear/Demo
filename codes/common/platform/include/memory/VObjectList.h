@@ -7,6 +7,7 @@
 #include "VType.h"
 #include "VMacro.h"
 #include "VPoolObject.h"
+#include <mutex>
 
 
 namespace VPlatform
@@ -50,10 +51,11 @@ namespace VPlatform
 		size_t realSize();
 
 	protected:
-		VMutex		*m_pMutex;
-		VPoolObject	*m_pHead;
-		VPoolObject	*m_pTail;
-		size_t		m_nSize;
+		VPoolObject				*m_pHead;
+		VPoolObject				*m_pTail;
+		size_t					m_nSize;
+		bool					m_bHasLocker;
+		std::recursive_mutex	m_mutex;
 	};
 }
 

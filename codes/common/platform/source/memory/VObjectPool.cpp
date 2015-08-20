@@ -4,7 +4,6 @@
 #include "VObjectAllocator.h"
 #include "VObjectList.h"
 #include "VPoolObject.h"
-#include "VMutex.h"
 #include "VDateTime.h"
 
 
@@ -24,13 +23,9 @@ namespace VPlatform
 		, m_pHeapHead(NULL)
 		, m_pHeapTail(NULL)
 		, m_pObjectAllocator(pAllocator)
-		, m_pMutex(NULL)
-	{
-		if (bHasLocker)
-		{
-			m_pMutex = new VMutex(VMutex::Recursive);
-		}
+		, m_bHasLocker(bHasLocker)
 
+	{
 		m_ullLastTimestamp = VDateTime::currentSecsSinceEpoch();
 		allocateObjects();
 	}
@@ -38,7 +33,6 @@ namespace VPlatform
 	VObjectPool::~VObjectPool()
 	{
 		releaseAllObjects();
-		V_SAFE_DELETE(m_pMutex);
 	}
 
 	void VObjectPool::reset()
@@ -321,14 +315,14 @@ namespace VPlatform
 
 	void VObjectPool::lock()
 	{
-		if (m_pMutex != NULL)
-			m_pMutex->lock();
+		if (m_bHasLocker)
+			m_mutex.lock();
 	}
 
 	void VObjectPool::unlock()
 	{
-		if (m_pMutex != NULL)
-			m_pMutex->unlock();
+		if (m_bHasLocker)
+			m_mutex.unlock();
 	}
 
 	void VObjectPool::releaseAllObjects()

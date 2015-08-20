@@ -20,12 +20,7 @@
 #include <list>
 #include <map>
 #include <set>
-
-
-namespace VPlatform
-{
-	class VMutex;
-}
+#include <mutex>
 
 
 namespace VFramework
@@ -206,15 +201,17 @@ namespace VFramework
 		typedef std::vector<VEventInstSet> VEventFilterList;
 		typedef VEventFilterList::iterator VEventFilterListItr;
 
-		VHandlerList	m_EventHandlers;					/**< 事件处理对象链表 */
-		VEventList		m_EventQueue[V_MAX_EVENT_QUEUE];	/**< 待处理事件队列 */
+		typedef std::unique_lock<std::recursive_mutex>	VAutoLock;
 
-		VEventFilterList	m_EventFilters;					/**< 事件过滤表 */
+		VHandlerList	m_EventHandlers;					/// 事件处理对象链表
+		VEventList		m_EventQueue[V_MAX_EVENT_QUEUE];	/// 待处理事件队列
 
-		int32_t			m_nCurrentQueue;					/**< 当前待处理事件队列 */
+		VEventFilterList	m_EventFilters;					/// 事件过滤表
 
-		VPlatform::VMutex			*m_pMutex;				/**< 互斥量对象，以支持多线程访问 */
-		VPlatform::VMutex			*m_pEventMutex;			/**< 事件注册和反注册，事件派发互斥量，用于事件注册 */
+		int32_t			m_nCurrentQueue;					/// 当前待处理事件队列
+
+		std::recursive_mutex		m_mutex;				///	用于发送事件的互斥量对象
+		std::recursive_mutex		m_mutexEvent;			/// 事件注册和反注册，事件派发互斥量，用于事件注册 */
 	};
 
 	#define V_EVENT_MANAGER		(VEventManager::GetInstance())

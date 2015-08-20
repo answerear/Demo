@@ -17,6 +17,7 @@
 #include "VMacro.h"
 #include "VPlatform.h"
 #include <vector>
+#include <mutex>
 
 
 namespace VPlatform
@@ -24,7 +25,6 @@ namespace VPlatform
 	typedef std::vector<uchar_t> VByteBuffer;
 	typedef VByteBuffer::iterator VByteBufferItr;
 
-	class VMutex;
 
 	class VPLATFORM_API VBufQueue
 	{
@@ -81,9 +81,10 @@ namespace VPlatform
 		size_t size() const	{ return m_Buffer.size(); }
 
 	protected:
-		VMutex		*m_pMutex;
+		typedef std::unique_lock<std::recursive_mutex> VAutoLock;
 
 		VByteBuffer	m_Buffer;
+		std::recursive_mutex	m_mutex;
 	};
 }
 

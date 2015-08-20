@@ -60,6 +60,7 @@ static void _checkPath()
 {
     if (0 == s_resourcePath.length())
     {
+#ifdef UNICODE
         WCHAR *pUtf16ExePath = nullptr;
         _get_wpgmptr(&pUtf16ExePath);
 
@@ -68,7 +69,14 @@ static void _checkPath()
 
         char utf8ExeDir[CC_MAX_PATH] = { 0 };
         int nNum = WideCharToMultiByte(CP_UTF8, 0, pUtf16ExePath, pUtf16DirEnd-pUtf16ExePath+1, utf8ExeDir, sizeof(utf8ExeDir), nullptr, nullptr);
+#else
+		char *pUtf8ExtPath = nullptr;
+		_get_pgmptr(&pUtf8ExtPath);
 
+		char *pUtf8DirEnd = strchr(pUtf8ExtPath, '\\');
+
+		char utf8ExeDir[CC_MAX_PATH] = {0};
+#endif
         s_resourcePath = convertPathFormatToUnixStyle(utf8ExeDir);
     }
 }

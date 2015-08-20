@@ -46,7 +46,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '10.0'">v100</PlatformToolset>
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '11.0'">v110</PlatformToolset>
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '11.0' and exists('$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A')">v110_xp</PlatformToolset>
@@ -124,8 +124,8 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(EngineRoot)cocos\audio\include;$(EngineRoot)external;$(EngineRoot)external\chipmunk\include\chipmunk;$(EngineRoot)extensions;..\..\common\framework\include\core;..\..\common\framework\include\base_param;..\..\common\platform\include\time;..\..\common\platform\include\network;..\..\common\platform\include\memory;..\..\common\platform\include\io;..\..\common\platform\include\device;..\..\common\platform\include\console;..\..\common\platform\include\codec;..\..\common\platform\include\apn;..\..\common\platform\include\adapter\win32;..\..\common\platform\include\adapter;..\..\common\platform\include;..\Classes;..;%(AdditionalIncludeDirectories);$(_COCOS_HEADER_WIN32_BEGIN);$(_COCOS_HEADER_WIN32_END)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USE_MATH_DEFINES;GL_GLEXT_PROTOTYPES;CC_ENABLE_CHIPMUNK_INTEGRATION=1;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(EngineRoot)cocos\audio\include;$(EngineRoot)external;$(EngineRoot)external\chipmunk\include\chipmunk;$(EngineRoot)extensions;$(EngineRoot);..\..\common\framework\include\core;..\..\common\framework\include\base_param;..\..\common\platform\include\time;..\..\common\platform\include\network;..\..\common\platform\include\memory;..\..\common\platform\include\io;..\..\common\platform\include\device;..\..\common\platform\include\console;..\..\common\platform\include\codec;..\..\common\platform\include\apn;..\..\common\platform\include\adapter\win32;..\..\common\platform\include\adapter;..\..\common\platform\include;..\Classes\scene\game;..\Classes\scene\loading;..\Classes\scene\menu;..\Classes\scenemgr;..\Classes\scene;..\Classes\app;..\Classes;..;%(AdditionalIncludeDirectories);$(_COCOS_HEADER_WIN32_BEGIN);$(_COCOS_HEADER_WIN32_END)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>V_OS_WIN32;WIN32;_DEBUG;_WINDOWS;_USE_MATH_DEFINES;GL_GLEXT_PROTOTYPES;CC_ENABLE_CHIPMUNK_INTEGRATION=1;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -190,8 +190,8 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>$(EngineRoot)cocos\audio\include;$(EngineRoot)external;$(EngineRoot)external\chipmunk\include\chipmunk;$(EngineRoot)extensions;..\..\common\framework\include\core;..\..\common\framework\include\base_param;..\..\common\platform\include\time;..\..\common\platform\include\network;..\..\common\platform\include\memory;..\..\common\platform\include\io;..\..\common\platform\include\device;..\..\common\platform\include\console;..\..\common\platform\include\codec;..\..\common\platform\include\apn;..\..\common\platform\include\adapter\win32;..\..\common\platform\include\adapter;..\..\common\platform\include;..\Classes;..;%(AdditionalIncludeDirectories);$(_COCOS_HEADER_WIN32_BEGIN);$(_COCOS_HEADER_WIN32_END)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USE_MATH_DEFINES;GL_GLEXT_PROTOTYPES;CC_ENABLE_CHIPMUNK_INTEGRATION=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(EngineRoot)cocos\audio\include;$(EngineRoot)external;$(EngineRoot)external\chipmunk\include\chipmunk;$(EngineRoot)extensions;$(EngineRoot);..\..\common\framework\include\core;..\..\common\framework\include\base_param;..\..\common\platform\include\time;..\..\common\platform\include\network;..\..\common\platform\include\memory;..\..\common\platform\include\io;..\..\common\platform\include\device;..\..\common\platform\include\console;..\..\common\platform\include\codec;..\..\common\platform\include\apn;..\..\common\platform\include\adapter\win32;..\..\common\platform\include\adapter;..\..\common\platform\include;..\Classes\scene\game;..\Classes\scene\loading;..\Classes\scene\menu;..\Classes\scenemgr;..\Classes\scene;..\Classes\app;..\Classes;..;%(AdditionalIncludeDirectories);$(_COCOS_HEADER_WIN32_BEGIN);$(_COCOS_HEADER_WIN32_END)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>V_OS_WIN32;WIN32;NDEBUG;_WINDOWS;_USE_MATH_DEFINES;GL_GLEXT_PROTOTYPES;CC_ENABLE_CHIPMUNK_INTEGRATION=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader>
@@ -275,6 +275,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     <ClCompile Include="..\..\common\platform\source\io\VDir.cpp" />
     <ClCompile Include="..\..\common\platform\source\io\VFileDataStream.cpp" />
     <ClCompile Include="..\..\common\platform\source\io\VMemoryDataStream.cpp" />
+    <ClCompile Include="..\..\common\platform\source\memory\VObjectList.cpp" />
     <ClCompile Include="..\..\common\platform\source\memory\VObjectPool.cpp" />
     <ClCompile Include="..\..\common\platform\source\memory\VPoolObject.cpp" />
     <ClCompile Include="..\..\common\platform\source\network\VBufQueue.cpp" />
@@ -284,8 +285,9 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     <ClCompile Include="..\..\common\platform\source\time\VTimer.cpp" />
     <ClCompile Include="..\..\common\platform\source\time\VTimerManager.cpp" />
     <ClCompile Include="..\..\common\platform\source\VSystem.cpp" />
-    <ClCompile Include="..\Classes\scenemgr\TGScene.cpp" />
+    <ClCompile Include="..\Classes\app\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\scenemgr\TGSceneManager.cpp" />
+    <ClCompile Include="..\Classes\scene\menu\TGSceneMainMenu.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -327,6 +329,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     <ClInclude Include="..\..\common\platform\include\io\VFileDataStream.h" />
     <ClInclude Include="..\..\common\platform\include\io\VMemoryDataStream.h" />
     <ClInclude Include="..\..\common\platform\include\memory\VObjectAllocator.h" />
+    <ClInclude Include="..\..\common\platform\include\memory\VObjectList.h" />
     <ClInclude Include="..\..\common\platform\include\memory\VObjectPool.h" />
     <ClInclude Include="..\..\common\platform\include\memory\VPoolObject.h" />
     <ClInclude Include="..\..\common\platform\include\network\VBufQueue.h" />
@@ -342,8 +345,13 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     <ClInclude Include="..\..\common\platform\include\VSingleton.h" />
     <ClInclude Include="..\..\common\platform\include\VSystem.h" />
     <ClInclude Include="..\..\common\platform\include\VType.h" />
+    <ClInclude Include="..\Classes\app\AppDelegate.h" />
     <ClInclude Include="..\Classes\scenemgr\TGScene.h" />
     <ClInclude Include="..\Classes\scenemgr\TGSceneManager.h" />
+    <ClInclude Include="..\Classes\scene\menu\TGSceneMainMenu.h" />
+    <ClInclude Include="..\Classes\scene\TGSceneName.h" />
+    <ClInclude Include="..\Classes\TGEngine.h" />
+    <ClInclude Include="..\Classes\TGMacro.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>
   <ItemGroup>

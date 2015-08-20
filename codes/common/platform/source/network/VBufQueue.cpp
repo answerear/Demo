@@ -11,21 +11,18 @@
 
 
 #include "VBufQueue.h"
-#include "VMutex.h"
-#include "VAutoLock.h"
+
 
 
 namespace VPlatform
 {
 	VBufQueue::VBufQueue(size_t unCapacity)
-		: m_pMutex(new VMutex(VMutex::Recursive))
 	{
 		m_Buffer.reserve(unCapacity);
 	}
 
 	VBufQueue::~VBufQueue()
 	{
-		V_SAFE_DELETE(m_pMutex);
 	}
 
 	bool VBufQueue::put(uchar_t *pData, size_t nDataLen)
@@ -33,7 +30,7 @@ namespace VPlatform
 		if (NULL == pData || 0 == nDataLen)
 			return false;
 
-		VAutoLock locker(m_pMutex, true);
+		VAutoLock locker(m_mutex);
 		m_Buffer.insert(m_Buffer.end(), pData, pData+nDataLen);
 
 		return true;
@@ -41,8 +38,8 @@ namespace VPlatform
 
 	void VBufQueue::take(uchar_t *&pData, size_t &nDataLen, bool bErase /* = false */, bool bAlloc /* = true */)
 	{
-		VAutoLock locker(m_pMutex, true);
-		
+		VAutoLock locker(m_mutex);
+
 		if (bAlloc)
 		{
 			size_t nTotalSize = size();
@@ -70,7 +67,7 @@ namespace VPlatform
 
 	void VBufQueue::take(VByteBuffer &rBuffer, size_t nBufSize, bool bErase /* = false */)
 	{
-		VAutoLock locker(m_pMutex, true);
+		VAutoLock locker(m_mutex);
 
 		size_t nTotalSize = size();
 		if (-1 == nBufSize || nBufSize > nTotalSize)
@@ -90,7 +87,7 @@ namespace VPlatform
 
 	void VBufQueue::erase(size_t nDataLen)
 	{
-		VAutoLock locker(m_pMutex, true);
+		VAutoLock locker(m_mutex);
 
 		VByteBufferItr itrBegin = m_Buffer.begin();
 		VByteBufferItr itrLast = itrBegin + nDataLen;

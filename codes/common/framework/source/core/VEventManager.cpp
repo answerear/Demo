@@ -3,8 +3,7 @@
 #include "VEventManager.h"
 #include "VEventParam.h"
 #include "VEventHandler.h"
-#include "VMutex.h"
-#include "VAutoLock.h"
+
 
 
 template<> VFramework::VEventManager *VSingleton<VFramework::VEventManager>::m_pInstance = NULL;
@@ -14,8 +13,6 @@ namespace VFramework
 {	
 	VEventManager::VEventManager(uint32_t unMaxEvents)
 		: m_nCurrentQueue(0)
-		, m_pMutex(new VPlatform::VMutex(VPlatform::VMutex::Recursive))
-		, m_pEventMutex(new VPlatform::VMutex(VPlatform::VMutex::Recursive))
 	{
 		m_EventHandlers.reserve(128);
 		m_EventHandlers.resize(128);
@@ -27,9 +24,6 @@ namespace VFramework
 	{
 		m_EventHandlers.clear();
 		clearEventQueue();
-
-		V_SAFE_DELETE(m_pEventMutex);
-		V_SAFE_DELETE(m_pMutex);
 	}
 
 	bool VEventManager::sendEvent(uint32_t unEventID, VEventParam *pEventParam, const VINSTANCE &receiver, const VINSTANCE &sender, int32_t nType)
@@ -42,25 +36,25 @@ namespace VFramework
 		if (V_BROADCAST_INSTANCE_ID == receiver)
 		{
 			// 广播
-			// 			int32_t i = 0;
-			// 			for (i = 0; i < (int32_t)m_EventHandlers.size(); ++i)
-			// 			{
-			// 				VEventHandler *pHandler = m_EventHandlers[i];
-			// 				if(NULL != pHandler)
-			// 				{
-			// 					if (nType == pHandler->HandlerType())
-			// 					{
-			// 						pHandler->processEvent(unEventID, pEventParam, sender);
-			// 					}
-			// 				}
-			// 			}
-			// 
-			// 			bRet = true;
-			bRet = sendEvent(unEventID, pEventParam, sender);
+			VAutoLock locker(m_mutex);
+			int32_t i = 0;
+			for (i = 0; i < (int32_t)m_EventHandlers.size(); ++i)
+			{
+				VEventHandler *pHandler = m_EventHandlers[i];
+				if(NULL != pHandler)
+				{
+					if (nType == pHandler->handlerType())
+					{
+						pHandler->processEvent(unEventID, pEventParam, sender);
+					}
+				}
+			}
+
+			bRet = true;
 		}
 		else
 		{
-			VPlatform::VAutoLock locker(m_pMutex, true);
+			VAutoLock locker(m_mutex);
 
 			// 发送给指定对象
 			VEventHandler *pReceiver = NULL;
@@ -80,9 +74,9 @@ namespace VFramework
 
 		bool bRet = false;
 
-		if (V_BROADCAST_INSTANCE_ID != receiver)
+// 		if (V_BROADCAST_INSTANCE_ID != receiver)
 		{
-			VPlatform::VAutoLock locker(m_pMutex, true);
+			VAutoLock locker(m_mutex);
 			VEventParam *pCopy = NULL;
 
 			if (pEventParam != NULL)
@@ -95,10 +89,10 @@ namespace VFramework
 
 			bRet = true;
 		}
-		else
-		{
-			bRet = postEvent(unEventID, pEventParam, sender);
-		}
+// 		else
+// 		{
+// 			bRet = postEvent(unEventID, pEventParam, sender);
+// 		}
 
 		return bRet;
 	}
@@ -107,8 +101,8 @@ namespace VFramework
 	{
 		bool bRet = false;
 
-		VPlatform::VAutoLock handlerLocker(m_pMutex, true);
-		VPlatform::VAutoLock eventLocker(m_pEventMutex, true);
+		VAutoLock handlerLocker(m_mutex);
+		VAutoLock eventLocker(m_mutexEvent);
 
 		if (unEventID < m_EventFilters.size())
 		{
@@ -138,8 +132,8 @@ namespace VFramework
 	{
 		bool bRet = false;
 
-		VPlatform::VAutoLock handlerLocker(m_pMutex, true);
-		VPlatform::VAutoLock eventLocker(m_pEventMutex, true);
+		VAutoLock handlerLocker(m_mutex);
+		VAutoLock eventLocker(m_mutexEvent);
 
 		if (unEventID < m_EventFilters.size())
 		{
@@ -208,7 +202,7 @@ namespace VFramework
 		bool bFound = false;
 		size_t index = 0;
 
-		VPlatform::VAutoLock locker(m_pMutex, true);
+		VAutoLock locker(m_mutex);
 
 		// 先查找原来数组中是否有空位，如果有空位直接存入数组空位，没有则需要扩展数组大小
 		VHandlerListItr itr = m_EventHandlers.begin();
@@ -243,7 +237,7 @@ namespace VFramework
 
 		bool bRet = false;
 
-		VPlatform::VAutoLock locker(m_pMutex, true);
+		VAutoLock locker(m_mutex);
 
 		int32_t index = instance.m_nIndex;
 		void *address = instance.m_pObject;
@@ -263,8 +257,8 @@ namespace VFramework
 
 		bool bRet = false;
 
-		VPlatform::VAutoLock locker(m_pMutex, true);
-		VPlatform::VAutoLock eventLocker(m_pEventMutex, true);
+		VAutoLock locker(m_mutex);
+		VAutoLock eventLocker(m_mutexEvent);
 
 		if (unEventID < m_EventFilters.size())
 		{
@@ -283,8 +277,8 @@ namespace VFramework
 
 		bool bRet = false;
 
-		VPlatform::VAutoLock locker(m_pMutex, true);
-		VPlatform::VAutoLock eventLocker(m_pEventMutex, true);
+		VAutoLock locker(m_mutex);
+		VAutoLock eventLocker(m_mutexEvent);
 
 		if (unEventID < m_EventFilters.size())
 		{
@@ -300,7 +294,7 @@ namespace VFramework
 	{
 		bool bRet = false;
 
-		VPlatform::VAutoLock locker(m_pMutex, true);
+		VAutoLock locker(m_mutex);
 		if (!m_EventQueue[m_nCurrentQueue].empty())
 		{
 			VEventListItr itr = m_EventQueue[m_nCurrentQueue].begin();
@@ -315,7 +309,7 @@ namespace VFramework
 
 	bool VEventManager::dispatchEvent()
 	{
-		VPlatform::VAutoLock locker(m_pMutex);
+		VAutoLock locker(m_mutex, std::defer_lock);
 
 		locker.lock();
 		int32_t index = m_nCurrentQueue;

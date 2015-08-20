@@ -88,7 +88,7 @@ namespace VFramework
 		 * @note 该接口是同步接口，调用该接口会立刻通知关注该事件的接收方，待接收方处理完才返回.
 		 *		事件派发对象的顺序是随机的.
 		 */
-		bool sendEventEx(uint32_t unEventID, VEventParam *pEventParam);
+		bool sendEvent(uint32_t unEventID, VEventParam *pEventParam);
 
 		/**
 		 * @brief 无指定对象的发送异步事件，注册了关注该事件的对象可以收到事件
@@ -98,7 +98,7 @@ namespace VFramework
 		 * @note 该接口是异步接口，调用该接口，事件会放入事件处理队列，直到程序循环到事件派发时才会派发给相应对象处理.
 		 *		事件派发对象的顺序是随机的.
 		 */
-		bool postEventEx(uint32_t unEventID, VEventParam *pEventParam);
+		bool postEvent(uint32_t unEventID, VEventParam *pEventParam);
 
 		/**
 		 * @brief 获取当前事件处理对象实例ID.

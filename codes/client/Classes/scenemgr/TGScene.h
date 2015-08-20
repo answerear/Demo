@@ -1,62 +1,20 @@
 ﻿
-
-#ifndef __VISION_TYPE_H__
-#define __VISION_TYPE_H__
-
-
-#include <string>
-#include <map>
-
-typedef signed char			char_t;
-typedef unsigned char       uchar_t;
-typedef signed short		short_t;
-typedef unsigned short      ushort_t;
-typedef signed int			int_t;
-typedef unsigned int        uint_t;
-typedef signed long			long_t;
-typedef unsigned long       ulong_t;
-
-typedef signed char			int8_t;
-typedef unsigned char		uint8_t;
-typedef signed short		int16_t;
-typedef unsigned short		uint16_t;
-typedef signed int			int32_t;
-typedef unsigned int		uint32_t;
-
-typedef signed long long	int64_t;
-typedef unsigned long long	uint64_t;
+#ifndef __TG_SCENE_H__
+#define __TG_SCENE_H__
 
 
-typedef std::string			VString;
-typedef std::wstring		VWString;
+#include "TGEngine.h"
 
 
-
-#if defined V_OS_WIN32	// Win32
-
-// 	#include <windows.h>
-
-	#define VEXPORT_API			__declspec(dllexport)
-	#define VIMPORT_API			__declspec(dllimport)
-
-	#ifndef STDCALL
-		#define STDCALL			__stdcall
-	#endif
-
-	#ifdef _WIN64
-		#define V_OS_X64
-	#else
-		#define V_OS_X86
-	#endif
-
-#else
-
-	#define VEXPORT_API
-	#define VIMPORT_API
-
-	#define STDCALL
-
-#endif
+/**
+ * @class TGScene
+ * @brief 场景类基类，提供跟CCLayer相类似功能，提供可以接收触摸屏、按键、重力感应事件.
+ */
+class TGScene : public CCScene
+{
+public:
+	virtual const VString &getSceneName() const = 0;
+};
 
 
-#endif	/*__VISION_TYPE_H__*/
+#endif	/*__TG_SCENE_H__*/

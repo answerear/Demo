@@ -1,5 +1,8 @@
 #include "AppDelegate.h"
-#include "HelloWorldScene.h"
+#include "TGSceneManager.h"
+#include "TGSceneName.h"
+#include "TGSceneMainMenu.h"
+
 
 USING_NS_CC;
 
@@ -46,11 +49,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     register_all_packages();
 
-    // create a scene. it's an autorelease object
-    auto scene = HelloWorld::createScene();
-
-    // run
-    director->runWithScene(scene);
+	TG_SCENE_MGR->runScene(TG_SCENE_MAIN_MENU);
 
     return true;
 }
@@ -69,4 +68,14 @@ void AppDelegate::applicationWillEnterForeground() {
 
     // if you use SimpleAudioEngine, it must resume here
     // SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
+}
+
+void AppDelegate::registerScenes()
+{
+	TG_SCENE_MGR->registerScene(TG_SCENE_MAIN_MENU, TGSceneMainMenu::create);
+}
+
+void AppDelegate::unregisterScenes()
+{
+	TG_SCENE_MGR->unregisterScene(TG_SCENE_MAIN_MENU);
 }

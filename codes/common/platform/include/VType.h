@@ -34,10 +34,13 @@ typedef std::wstring		VWString;
 
 #if defined V_OS_WIN32	// Win32
 
-// 	#include <windows.h>
-
-	#define VEXPORT_API			__declspec(dllexport)
-	#define VIMPORT_API			__declspec(dllimport)
+	#if defined V_USE_DLL
+		#define VEXPORT_API			__declspec(dllexport)
+		#define VIMPORT_API			__declspec(dllimport)
+	#else
+		#define VEXPORT_API
+		#define VIMPORT_API
+	#endif
 
 	#ifndef STDCALL
 		#define STDCALL			__stdcall

@@ -7,24 +7,6 @@
     <Filter Include="resource">
       <UniqueIdentifier>{715254bc-d70b-4ec5-bf29-467dd3ace079}</UniqueIdentifier>
     </Filter>
-    <Filter Include="scene">
-      <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="app">
-      <UniqueIdentifier>{f15d364c-0720-4d36-be37-87edf83ae321}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="scene\menu">
-      <UniqueIdentifier>{aba92e02-3e46-4744-9523-9a3f6d0993d5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="scene\loading">
-      <UniqueIdentifier>{d5192429-e268-44bd-9393-923f981526d1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="scene\game">
-      <UniqueIdentifier>{0b554ea1-760d-4572-b7d8-4cb8e40c7ca5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="scenemgr">
-      <UniqueIdentifier>{289fd634-22a2-4c4c-b323-5c904a07910f}</UniqueIdentifier>
-    </Filter>
     <Filter Include="framework">
       <UniqueIdentifier>{218fd6bb-c853-4608-afbb-61c47776ccf3}</UniqueIdentifier>
     </Filter>
@@ -115,16 +97,34 @@
     <Filter Include="platform\source\time">
       <UniqueIdentifier>{6e2635f3-98ca-4bd0-9fe0-a493253ed1a9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="game">
+      <UniqueIdentifier>{a7ceb5d8-a015-4f67-924d-d2c3da1b96fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game\scene">
+      <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game\scene\menu">
+      <UniqueIdentifier>{aba92e02-3e46-4744-9523-9a3f6d0993d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game\scene\loading">
+      <UniqueIdentifier>{d5192429-e268-44bd-9393-923f981526d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game\scene\game">
+      <UniqueIdentifier>{0b554ea1-760d-4572-b7d8-4cb8e40c7ca5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game\scenemgr">
+      <UniqueIdentifier>{289fd634-22a2-4c4c-b323-5c904a07910f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game\app">
+      <UniqueIdentifier>{f15d364c-0720-4d36-be37-87edf83ae321}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>win32</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\scenemgr\TGScene.cpp">
-      <Filter>scenemgr</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\scenemgr\TGSceneManager.cpp">
-      <Filter>scenemgr</Filter>
+      <Filter>game\scenemgr</Filter>
     </ClCompile>
     <ClCompile Include="..\..\common\framework\source\core\VEventHandler.cpp">
       <Filter>framework\source\core</Filter>
@@ -210,16 +210,25 @@
     <ClCompile Include="..\..\common\platform\source\VSystem.cpp">
       <Filter>platform\source</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\app\AppDelegate.cpp">
+      <Filter>game\app</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\menu\TGSceneMainMenu.cpp">
+      <Filter>game\scene\menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\platform\source\memory\VObjectList.cpp">
+      <Filter>platform\source\memory</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
       <Filter>win32</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\scenemgr\TGScene.h">
-      <Filter>scenemgr</Filter>
+      <Filter>game\scenemgr</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\scenemgr\TGSceneManager.h">
-      <Filter>scenemgr</Filter>
+      <Filter>game\scenemgr</Filter>
     </ClInclude>
     <ClInclude Include="..\..\common\framework\include\base_param\VEventParamBuffer.h">
       <Filter>framework\include\base_param</Filter>
@@ -379,6 +388,24 @@
     </ClInclude>
     <ClInclude Include="..\..\common\platform\include\VType.h">
       <Filter>platform\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TGEngine.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\app\AppDelegate.h">
+      <Filter>game\app</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TGMacro.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\menu\TGSceneMainMenu.h">
+      <Filter>game\scene\menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\TGSceneName.h">
+      <Filter>game\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\platform\include\memory\VObjectList.h">
+      <Filter>platform\include\memory</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

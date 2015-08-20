@@ -34,6 +34,10 @@ public:
     @param  the pointer of the application
     */
     virtual void applicationWillEnterForeground();
+
+protected:
+	void registerScenes();
+	void unregisterScenes();
 };
 
 #endif // _APP_DELEGATE_H_

@@ -2,40 +2,34 @@
 
 #include "VObjectList.h"
 #include "VPoolObject.h"
-#include "VMutex.h"
 
 
 namespace VPlatform
 {
 	VObjectList::VObjectList(bool bLocker/* = false */)
-		: m_pMutex(NULL)
-		, m_pHead(NULL)
+		: m_pHead(NULL)
 		, m_pTail(NULL)
 		, m_nSize(0)
+		, m_bHasLocker(bLocker)
 	{
-		if (bLocker)
-		{
-			m_pMutex = new VMutex(VMutex::Recursive);
-		}
+		
 	}
 
 	VObjectList::~VObjectList()
 	{
 		clear();
-
-		V_SAFE_DELETE(m_pMutex);
 	}
 
 	void VObjectList::lock()
 	{
-		if (m_pMutex != NULL)
-			m_pMutex->lock();
+		if (m_bHasLocker)
+			m_mutex.lock();
 	}
 
 	void VObjectList::unlock()
 	{
-		if (m_pMutex != NULL)
-			m_pMutex->unlock();
+		if (m_bHasLocker)
+			m_mutex.unlock();
 	}
 
 	size_t VObjectList::realSize()
