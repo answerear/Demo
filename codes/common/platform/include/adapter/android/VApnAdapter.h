@@ -4,19 +4,16 @@
 
 
 #include "IApnAdapter.h"
-#include "QGAndroidJNIHelper.h"
-#include "QGAndroidApnManager.h"
 
-namespace QGLoggerSystem
+namespace VPlatform
 {
-	class QGApnAdapter : public IApnAdapter,public IApnAdapterObserver
+	class VApnAdapter : public IApnAdapter
 	{
-		friend class QGAndroidApnManager;
-		QG_DISABLE_COPY(QGApnAdapter);
+		V_DISABLE_COPY(VApnAdapter);
 
 	public:
-		QGApnAdapter();
-		virtual ~QGApnAdapter();
+		VApnAdapter();
+		virtual ~VApnAdapter();
 
 	protected:
 		virtual void SetObserver(IApnAdapterObserver *pObserver);
@@ -24,7 +21,7 @@ namespace QGLoggerSystem
 		virtual EApnType GetApnType() const;
 		virtual ECarrier GetCarrier() const;
 
-		virtual bool PingRoutes(const QString &strHost);
+		virtual bool PingRoutes(const VString &strHost);
 		virtual void CancelPingRoutes();
 	private:
         IApnAdapterObserver* m_pObserver;

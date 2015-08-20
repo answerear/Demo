@@ -204,9 +204,6 @@
     <ClCompile Include="..\..\common\platform\source\time\VTimer.cpp">
       <Filter>platform\source\time</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\common\platform\source\time\VTimerManager.cpp">
-      <Filter>platform\source\time</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\common\platform\source\VSystem.cpp">
       <Filter>platform\source</Filter>
     </ClCompile>

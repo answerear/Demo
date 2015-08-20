@@ -1,16 +1,18 @@
-#ifndef __QQGAME_ADAPTER_FACTORY_ANDROID_H__
-#define __QQGAME_ADAPTER_FACTORY_ANDROID_H__
+#ifndef __VISION_ADAPTER_FACTORY_ANDROID_H__
+#define __VISION_ADAPTER_FACTORY_ANDROID_H__
+
 
 #include "IAdapterFactory.h"
 
-namespace QGLoggerSystem
+
+namespace VPlatform
 {
-	class QGAdapterFactory : public IAdapterFactory
+	class VAdapterFactory : public IAdapterFactory
 	{
-		QG_DISABLE_COPY(QGAdapterFactory);
+		V_DISABLE_COPY(VAdapterFactory);
 
 	public:
-		QGAdapterFactory();
+		VAdapterFactory();
 
 	protected:
 		virtual IConsoleAdapter *CreateConsoleAdapter();
@@ -21,4 +23,4 @@ namespace QGLoggerSystem
 	};
 }
 
-#endif	/*__QQGAME_ADAPTER_FACTORY_ANDROID_H__*/
+#endif	/*__VISION_ADAPTER_FACTORY_ANDROID_H__*/

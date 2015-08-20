@@ -283,7 +283,6 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     <ClCompile Include="..\..\common\platform\source\time\VDateTime.cpp" />
     <ClCompile Include="..\..\common\platform\source\time\VRunLoop.cpp" />
     <ClCompile Include="..\..\common\platform\source\time\VTimer.cpp" />
-    <ClCompile Include="..\..\common\platform\source\time\VTimerManager.cpp" />
     <ClCompile Include="..\..\common\platform\source\VSystem.cpp" />
     <ClCompile Include="..\Classes\app\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\scenemgr\TGSceneManager.cpp" />

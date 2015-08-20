@@ -18,17 +18,125 @@
     <Filter Include="Java Source Files\org\cocos2dx\cpp">
       <UniqueIdentifier>{1f4cf956-108f-4a00-b426-ec5105832b8c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="main">
+    <Filter Include="framework">
+      <UniqueIdentifier>{703004a5-ebe2-4a3e-982d-10268a708310}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform">
+      <UniqueIdentifier>{a32ed260-62c4-4a1f-9e9e-e4e074cd7680}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game">
+      <UniqueIdentifier>{0135dbdd-a1e9-4f3d-a871-fd3de54b40a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game\main">
       <UniqueIdentifier>{31a6a8fb-238b-4068-9a21-0a8966c15912}</UniqueIdentifier>
     </Filter>
-    <Filter Include="app">
-      <UniqueIdentifier>{d924aeb5-c870-4d20-a0c3-4d217dd60b5c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="scene">
+    <Filter Include="game\scene">
       <UniqueIdentifier>{3ff5f88e-1459-4424-ac06-2fdd081b172e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="scenemgr">
+    <Filter Include="game\scenemgr">
       <UniqueIdentifier>{0ec3afd2-1282-4727-8dd4-745d497e6ef1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game\app">
+      <UniqueIdentifier>{d924aeb5-c870-4d20-a0c3-4d217dd60b5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\include">
+      <UniqueIdentifier>{e8a9d005-0c48-4733-808a-a7bc9fbeb40c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\source">
+      <UniqueIdentifier>{f24649fc-1fda-4bf4-a0bb-fcbd5be407cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\include\base_param">
+      <UniqueIdentifier>{b94b8f38-1fc5-47f9-8e04-eb9d6c7ae01d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\include\core">
+      <UniqueIdentifier>{ae36123a-0500-46e0-ac19-c83b8aaf4afe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\source\base_param">
+      <UniqueIdentifier>{4835c6d8-db2c-45b8-953f-6a0013f790fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework\source\core">
+      <UniqueIdentifier>{1f20d16b-df2b-4dd4-99db-41581f73debd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\include">
+      <UniqueIdentifier>{ab189baa-0386-4081-b145-a0ac5784a7f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\source">
+      <UniqueIdentifier>{0237d598-dd13-4fda-b352-d5c155f9053b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\include\adapter">
+      <UniqueIdentifier>{773dbc37-d362-4aff-8fcf-95db86af6dfe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\include\adapter\android">
+      <UniqueIdentifier>{a2ed357c-baee-4908-9ca0-26c324625f50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\include\adapter\unix">
+      <UniqueIdentifier>{97b0ea2c-0e02-4d35-86b4-7d6e1501c49e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\include\apn">
+      <UniqueIdentifier>{752e9fe3-f30e-409d-b34b-b71142e5e441}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\include\codec">
+      <UniqueIdentifier>{13910445-48a8-45d8-a092-317ab7c257a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\include\console">
+      <UniqueIdentifier>{35ab8d6f-84a2-4528-b053-c0539c7dd4b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\include\device">
+      <UniqueIdentifier>{72bbd95d-abe7-483c-827e-d0169ef2806a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\include\io">
+      <UniqueIdentifier>{38ae8bca-bb07-4b01-ad5f-28f4cea7672c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\include\memory">
+      <UniqueIdentifier>{450e549e-4835-4b7d-a19c-0067707b0626}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\include\network">
+      <UniqueIdentifier>{09d18a34-175f-49ac-856f-553c48bc4111}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\include\time">
+      <UniqueIdentifier>{3bc8385f-c52b-4fea-b008-1d5b402c09ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\source\adapter">
+      <UniqueIdentifier>{be21b971-25fe-4066-a408-e4a61924fe19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\source\adapter\android">
+      <UniqueIdentifier>{2b66a49e-1fd1-400b-8178-93ea0c6cbfb7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\source\adapter\unix">
+      <UniqueIdentifier>{cc10443e-2bcd-4e3f-8523-fed36468014b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\source\apn">
+      <UniqueIdentifier>{f0972c7b-d564-48e5-955e-f3397b8eef8a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\source\codec">
+      <UniqueIdentifier>{3521f217-12ff-4cf3-abf6-d1f504510367}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\source\console">
+      <UniqueIdentifier>{4949123f-ccaf-41dd-80ba-16b61381dd21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\source\device">
+      <UniqueIdentifier>{bd72848b-8ebd-4fb0-a22b-39e3203370b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\source\io">
+      <UniqueIdentifier>{28efb0ce-2433-4ae1-90d2-0eedb20dc7f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\source\memory">
+      <UniqueIdentifier>{0d3f32e2-d7b9-4163-9ca3-74072ee0e5e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\source\network">
+      <UniqueIdentifier>{32a6cd5a-37a0-476f-8398-5918bb51e42b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\source\time">
+      <UniqueIdentifier>{31c729ee-1ac9-498d-966c-1fc84884bc50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game\scene\menu">
+      <UniqueIdentifier>{37959c59-083b-4699-879e-615c424765e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game\scene\loading">
+      <UniqueIdentifier>{6b5e0310-7c41-4470-a2ad-ced23546ca1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game\scene\game">
+      <UniqueIdentifier>{4f282f33-2cb1-4b85-a007-b87cca05e5a3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -40,5 +148,270 @@
     <None Include="..\..\src\org\cocos2dx\cpp\AppActivity.java">
       <Filter>Java Source Files\org\cocos2dx\cpp</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\jni\main\main.cpp">
+      <Filter>game\main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\common\framework\source\base_param\VEventParamBuffer.cpp">
+      <Filter>framework\source\base_param</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\common\framework\source\core\VEventHandler.cpp">
+      <Filter>framework\source\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\common\framework\source\core\VEventManager.cpp">
+      <Filter>framework\source\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\common\framework\source\core\VInstance.cpp">
+      <Filter>framework\source\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\common\platform\source\adapter\Unix\VDirAdapter_Unix.cpp">
+      <Filter>platform\source\adapter\unix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\common\platform\source\apn\VApnManager.cpp">
+      <Filter>platform\source\apn</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\common\platform\source\codec\VTextCodec.cpp">
+      <Filter>platform\source\codec</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\common\platform\source\console\VConsole.cpp">
+      <Filter>platform\source\console</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\common\platform\source\device\VDeviceInfo.cpp">
+      <Filter>platform\source\device</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\common\platform\source\io\VDataStream.cpp">
+      <Filter>platform\source\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\common\platform\source\io\VDir.cpp">
+      <Filter>platform\source\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\common\platform\source\io\VFileDataStream.cpp">
+      <Filter>platform\source\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\common\platform\source\io\VMemoryDataStream.cpp">
+      <Filter>platform\source\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\common\platform\source\memory\VObjectList.cpp">
+      <Filter>platform\source\memory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\common\platform\source\memory\VObjectPool.cpp">
+      <Filter>platform\source\memory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\common\platform\source\memory\VPoolObject.cpp">
+      <Filter>platform\source\memory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\common\platform\source\network\VBufQueue.cpp">
+      <Filter>platform\source\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\common\platform\source\network\VSocket.cpp">
+      <Filter>platform\source\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\common\platform\source\time\VDateTime.cpp">
+      <Filter>platform\source\time</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\common\platform\source\time\VRunLoop.cpp">
+      <Filter>platform\source\time</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\common\platform\source\time\VTimer.cpp">
+      <Filter>platform\source\time</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\common\platform\source\VSystem.cpp">
+      <Filter>platform\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\common\platform\source\adapter\Android\VAdapterFactory.cpp">
+      <Filter>platform\source\adapter\android</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Classes\app\AppDelegate.cpp">
+      <Filter>game\app</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Classes\scenemgr\TGSceneManager.cpp">
+      <Filter>game\scenemgr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Classes\TGFrameDispatcher.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\common\framework\include\base_param\VEventParamBuffer.h">
+      <Filter>framework\include\base_param</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\framework\include\base_param\VEventParamT1.h">
+      <Filter>framework\include\base_param</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\framework\include\base_param\VEventParamT2.h">
+      <Filter>framework\include\base_param</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\framework\include\base_param\VEventParamT3.h">
+      <Filter>framework\include\base_param</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\framework\include\base_param\VEventParamT4.h">
+      <Filter>framework\include\base_param</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\framework\include\base_param\VEventParamT5.h">
+      <Filter>framework\include\base_param</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\framework\include\core\VEventDefine.h">
+      <Filter>framework\include\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\framework\include\core\VEventHandler.h">
+      <Filter>framework\include\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\framework\include\core\VEventMacro.h">
+      <Filter>framework\include\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\framework\include\core\VEventManager.h">
+      <Filter>framework\include\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\framework\include\core\VEventParam.h">
+      <Filter>framework\include\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\framework\include\core\VFramework.h">
+      <Filter>framework\include\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\framework\include\core\VInstance.h">
+      <Filter>framework\include\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\platform\include\adapter\unix\VDirAdapter_Unix.h">
+      <Filter>platform\include\adapter\unix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\platform\include\apn\IApnObserver.h">
+      <Filter>platform\include\apn</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\platform\include\apn\VApnManager.h">
+      <Filter>platform\include\apn</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\platform\include\apn\VApnType.h">
+      <Filter>platform\include\apn</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\platform\include\codec\VTextCodec.h">
+      <Filter>platform\include\codec</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\platform\include\console\VConsole.h">
+      <Filter>platform\include\console</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\platform\include\device\VDeviceInfo.h">
+      <Filter>platform\include\device</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\platform\include\io\VDataStream.h">
+      <Filter>platform\include\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\platform\include\io\VDir.h">
+      <Filter>platform\include\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\platform\include\io\VFileDataStream.h">
+      <Filter>platform\include\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\platform\include\io\VMemoryDataStream.h">
+      <Filter>platform\include\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\platform\include\memory\VObjectAllocator.h">
+      <Filter>platform\include\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\platform\include\memory\VObjectList.h">
+      <Filter>platform\include\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\platform\include\memory\VObjectPool.h">
+      <Filter>platform\include\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\platform\include\memory\VPoolObject.h">
+      <Filter>platform\include\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\platform\include\network\VBufQueue.h">
+      <Filter>platform\include\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\platform\include\network\VSocket.h">
+      <Filter>platform\include\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\platform\include\network\VSocketType.h">
+      <Filter>platform\include\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\platform\include\time\IRunLoopObserver.h">
+      <Filter>platform\include\time</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\platform\include\time\ITimerObserver.h">
+      <Filter>platform\include\time</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\platform\include\time\VDateTime.h">
+      <Filter>platform\include\time</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\platform\include\time\VRunLoop.h">
+      <Filter>platform\include\time</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\platform\include\time\VTimer.h">
+      <Filter>platform\include\time</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\platform\include\VMacro.h">
+      <Filter>platform\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\platform\include\VPlatform.h">
+      <Filter>platform\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\platform\include\VSingleton.h">
+      <Filter>platform\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\platform\include\VSystem.h">
+      <Filter>platform\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\platform\include\VType.h">
+      <Filter>platform\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\platform\include\adapter\IAdapterFactory.h">
+      <Filter>platform\include\adapter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\platform\include\adapter\IApnAdapter.h">
+      <Filter>platform\include\adapter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\platform\include\adapter\IApnAdapterObserver.h">
+      <Filter>platform\include\adapter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\platform\include\adapter\IConsoleAdapter.h">
+      <Filter>platform\include\adapter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\platform\include\adapter\IDeviceInfoAdapter.h">
+      <Filter>platform\include\adapter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\platform\include\adapter\IDirAdapter.h">
+      <Filter>platform\include\adapter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\platform\include\adapter\ITimerAdapter.h">
+      <Filter>platform\include\adapter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\platform\include\adapter\android\VAdapterFactory.h">
+      <Filter>platform\include\adapter\android</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Classes\app\AppDelegate.h">
+      <Filter>game\app</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Classes\scenemgr\TGScene.h">
+      <Filter>game\scenemgr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Classes\scenemgr\TGSceneManager.h">
+      <Filter>game\scenemgr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Classes\TGEngine.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Classes\TGEventDefine.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Classes\TGFrameDispatcher.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Classes\TGMacro.h">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\platform\include\adapter\android\VApnAdapter.h">
+      <Filter>platform\include\adapter\android</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\platform\include\adapter\android\VConsoleAdapter.h">
+      <Filter>platform\include\adapter\android</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\platform\include\adapter\android\VDirAdapter.h">
+      <Filter>platform\include\adapter\android</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\common\platform\include\adapter\android\VTimerAdapter.h">
+      <Filter>platform\include\adapter\android</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
