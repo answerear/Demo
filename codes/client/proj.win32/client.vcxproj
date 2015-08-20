@@ -288,6 +288,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     <ClCompile Include="..\Classes\app\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\scenemgr\TGSceneManager.cpp" />
     <ClCompile Include="..\Classes\scene\menu\TGSceneMainMenu.cpp" />
+    <ClCompile Include="..\Classes\TGFrameDispatcher.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -351,6 +352,8 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     <ClInclude Include="..\Classes\scene\menu\TGSceneMainMenu.h" />
     <ClInclude Include="..\Classes\scene\TGSceneName.h" />
     <ClInclude Include="..\Classes\TGEngine.h" />
+    <ClInclude Include="..\Classes\TGEventDefine.h" />
+    <ClInclude Include="..\Classes\TGFrameDispatcher.h" />
     <ClInclude Include="..\Classes\TGMacro.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>

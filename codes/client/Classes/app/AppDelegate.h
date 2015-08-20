@@ -3,6 +3,10 @@
 
 #include "cocos2d.h"
 
+
+class TGFrameDispatcher;
+
+
 /**
 @brief    The cocos2d Application.
 
@@ -38,6 +42,9 @@ public:
 protected:
 	void registerScenes();
 	void unregisterScenes();
+
+protected:
+	TGFrameDispatcher	*m_pFrameDispatcher;
 };
 
 #endif // _APP_DELEGATE_H_

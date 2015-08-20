@@ -1,4 +1,5 @@
 #include "AppDelegate.h"
+#include "TGFrameDispatcher.h"
 #include "TGSceneManager.h"
 #include "TGSceneName.h"
 #include "TGSceneMainMenu.h"
@@ -6,12 +7,17 @@
 
 USING_NS_CC;
 
-AppDelegate::AppDelegate() {
-
+AppDelegate::AppDelegate() 
+	: m_pFrameDispatcher(new TGFrameDispatcher())
+{
+	registerScenes();
 }
 
 AppDelegate::~AppDelegate() 
 {
+	unregisterScenes();
+
+	delete m_pFrameDispatcher;
 }
 
 //if you want a different context,just modify the value of glContextAttrs

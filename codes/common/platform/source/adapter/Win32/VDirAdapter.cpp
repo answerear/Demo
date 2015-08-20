@@ -30,7 +30,14 @@ namespace VPlatform
 		if (strPath.empty() || strPath == "")
 			return false;
 
+#ifdef UNICODE
+		WCHAR wszPath[512] = {0};
+		::MultiByteToWideChar(CP_UTF8, 0, strPath.c_str(), strPath.length(), wszPath, sizeof(wszPath));
+		m_hFindFile = ::FindFirstFile(wszPath, &m_FindFileData);
+#else
 		m_hFindFile = ::FindFirstFile(strPath.c_str(), &m_FindFileData);
+#endif
+		
 		extractRoot(strPath, m_strRoot);
 
 		m_bExtractName = false;
@@ -78,7 +85,13 @@ namespace VPlatform
 
 		if (!m_bExtractName)
 		{
+#ifdef UNICODE
+			char szPath[512] = {0};
+			::WideCharToMultiByte(CP_UTF8, 0, m_FindFileData.cFileName, MAX_PATH, szPath, sizeof(szPath), nullptr, nullptr);
+			VString strFilePath(szPath);
+#else
 			VString strFilePath = m_FindFileData.cFileName;
+#endif
 			extractFileName(strFilePath, m_strName, m_strTitle);
 		}
 
@@ -90,7 +103,13 @@ namespace VPlatform
 		if (m_hFindFile == INVALID_HANDLE_VALUE)
 			return "";
 
+#ifdef UNICODE
+		char szPath[512] = {0};
+		::WideCharToMultiByte(CP_UTF8, 0, m_FindFileData.cFileName, MAX_PATH, szPath, sizeof(szPath), nullptr, nullptr);
+		VString strPath(szPath);
+#else
 		VString strPath = m_FindFileData.cFileName;
+#endif
 
 		if (!m_bExtractName)
 		{
@@ -107,7 +126,13 @@ namespace VPlatform
 
 		if (!m_bExtractName)
 		{
+#ifdef UNICODE
+			char szPath[512] = {0};
+			::WideCharToMultiByte(CP_UTF8, 0, m_FindFileData.cFileName, MAX_PATH, szPath, sizeof(szPath), nullptr, nullptr);
+			VString strFilePath(szPath);
+#else
 			VString strFilePath = m_FindFileData.cFileName;
+#endif
 			extractFileName(strFilePath, m_strName, m_strTitle);
 		}
 
@@ -129,7 +154,13 @@ namespace VPlatform
 
 		if (!m_bExtractName)
 		{
+#ifdef UNICODE
+			char szPath[512] = {0};
+			::WideCharToMultiByte(CP_UTF8, 0, m_FindFileData.cFileName, MAX_PATH, szPath, sizeof(szPath), nullptr, nullptr);
+			VString strPath(szPath);
+#else
 			VString strPath = m_FindFileData.cFileName;
+#endif
 			extractFileName(strPath, m_strName, m_strTitle);
 		}
 
@@ -147,7 +178,13 @@ namespace VPlatform
 			return 0;
 
 		struct _stat buffer;
+#ifdef UNICODE
+		char szFileName[MAX_PATH] = {0};
+		::WideCharToMultiByte(CP_UTF8, 0, m_FindFileData.cFileName, MAX_PATH, szFileName, sizeof(szFileName), nullptr, nullptr);
+		int result = _stat(szFileName, &buffer);
+#else
 		int result = _stat(m_FindFileData.cFileName, &buffer);
+#endif
 		if (result == 0)
 		{
 			return buffer.st_ctime;
@@ -162,7 +199,13 @@ namespace VPlatform
 			return 0;
 
 		struct _stat buffer;
+#ifdef UNICODE
+		char szFileName[MAX_PATH] = {0};
+		::WideCharToMultiByte(CP_UTF8, 0, m_FindFileData.cFileName, MAX_PATH, szFileName, sizeof(szFileName), nullptr, nullptr);
+		int result = _stat(szFileName, &buffer);
+#else
 		int result = _stat(m_FindFileData.cFileName, &buffer);
+#endif
 		if (result == 0)
 		{
 			return buffer.st_atime;
@@ -176,9 +219,14 @@ namespace VPlatform
 		if (m_hFindFile == INVALID_HANDLE_VALUE)
 			return 0;
 
-		VString strPath = m_strRoot + VString(m_FindFileData.cFileName);
 		struct _stat buffer;
-		int result = _stat(strPath.c_str(), &buffer);
+#ifdef UNICODE
+		char szFileName[MAX_PATH] = {0};
+		::WideCharToMultiByte(CP_UTF8, 0, m_FindFileData.cFileName, MAX_PATH, szFileName, sizeof(szFileName), nullptr, nullptr);
+		int result = _stat(szFileName, &buffer);
+#else
+		int result = _stat(m_FindFileData.cFileName, &buffer);
+#endif
 		if (result == 0)
 		{
 			return buffer.st_mtime;
@@ -219,7 +267,13 @@ namespace VPlatform
 	VString VDirAdapter::getCachePath() const
 	{
 		char szBuf[MAX_PATH];
+#ifdef UNICODE
+		WCHAR wszBuf[MAX_PATH];
+		::GetModuleFileName(NULL, wszBuf, sizeof(wszBuf));
+		::WideCharToMultiByte(CP_UTF8, 0, wszBuf, MAX_PATH, szBuf, sizeof(szBuf), nullptr, nullptr);
+#else
 		::GetModuleFileName(NULL, szBuf, sizeof(szBuf));
+#endif
 		char *ptr = szBuf;
 		while (strchr(ptr, '\\'))
 		{
